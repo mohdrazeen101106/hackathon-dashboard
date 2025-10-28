@@ -9,6 +9,23 @@ import teamRoutes from "./routes/teamRoutes.js";
 import announcementRoutes from "./routes/announcementRoutes.js";
 
 dotenv.config();
+
+// ✅ Configure CORS
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // for local dev
+      "https://hackathon-dashboard-77q7.onrender.com/" // your deployed frontend
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // allow cookies/auth headers if using JWTs
+  })
+);
+
+app.use(express.json());
+
+
+dotenv.config();
 connectDB();
 
 const app = express();
