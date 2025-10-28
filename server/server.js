@@ -10,8 +10,6 @@ import announcementRoutes from "./routes/announcementRoutes.js";
 
 dotenv.config();
 
-app.use(express.json());
-
 
 dotenv.config();
 connectDB();
